@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://my-json-server.typicode.com/notvalley232/Lab02-Vue-Vite-Implementation',
   withCredentials: false,
   headers: {
     Accept: 'application/json',
@@ -10,7 +10,11 @@ const apiClient = axios.create({
 })
 
 export default {
-  getEvents() {
-    return apiClient.get('/events')
+  getEvents(perPage: Number, page: Number) {
+    const start = (page - 1) * perPage
+    return apiClient.get('/events?_start=' + start + '&_limit=' + perPage)
+  },
+  getEvent(id: number) {
+    return apiClient.get('/events/' + id)
   }
 }
