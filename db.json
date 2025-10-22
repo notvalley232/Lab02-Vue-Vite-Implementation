@@ -43,6 +43,72 @@
       "time": "09:00",
       "petsAllowed": true,
       "organizer": "Earth Guardian Society"
+    },
+    {
+      "id": 1234567,
+      "category": "education",
+      "title": "Coding Workshop for Kids",
+      "description": "Introduce children to the world of programming with fun activities.",
+      "location": "Tech Center",
+      "date": "May 20, 2024",
+      "time": "14:00",
+      "petsAllowed": false,
+      "organizer": "Code Academy"
+    },
+    {
+      "id": 2345678,
+      "category": "health",
+      "title": "Community Health Fair",
+      "description": "Free health screenings and wellness information for the community.",
+      "location": "City Hall",
+      "date": "June 10, 2024",
+      "time": "10:00",
+      "petsAllowed": false,
+      "organizer": "Health Department"
+    },
+    {
+      "id": 3456789,
+      "category": "arts",
+      "title": "Local Art Exhibition",
+      "description": "Showcase of local artists and their amazing works.",
+      "location": "Art Gallery",
+      "date": "July 5, 2024",
+      "time": "18:00",
+      "petsAllowed": true,
+      "organizer": "Art Society"
+    },
+    {
+      "id": 4567890,
+      "category": "sports",
+      "title": "Community Marathon",
+      "description": "Annual marathon event for fitness enthusiasts of all levels.",
+      "location": "City Park",
+      "date": "August 12, 2024",
+      "time": "07:00",
+      "petsAllowed": true,
+      "organizer": "Running Club"
+    },
+    {
+      "id": 5678901,
+      "category": "music",
+      "title": "Summer Music Festival",
+      "description": "Enjoy live music from local bands and artists.",
+      "location": "Central Square",
+      "date": "September 15, 2024",
+      "time": "19:00",
+      "petsAllowed": true,
+      "organizer": "Music Association"
+    },
+    {
+      "id": 6789012,
+      "category": "technology",
+      "title": "Tech Innovation Summit",
+      "description": "Explore the latest in technology and innovation.",
+      "location": "Convention Center",
+      "date": "October 8, 2024",
+      "time": "09:00",
+      "petsAllowed": false,
+      "organizer": "Tech Hub"
     }
   ]
 }
