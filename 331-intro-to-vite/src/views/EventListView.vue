@@ -31,7 +31,7 @@ const hasNexPage = computed(() => {
   return page.value < totalPages
 })
 
-const changePageSize = (event: Event) => {
+const changePageSize = (event: any) => {
   const target = event.target as HTMLSelectElement
   const newPageSize = parseInt(target.value)
   router.push({
@@ -65,6 +65,7 @@ onMounted(() => {
         console.error('There was an error!', err)
         error.value = 'Failed to load events. Please try again.'
         loading.value = false
+        router.push({ name: 'network-error-view' })
       })
   })
 })
