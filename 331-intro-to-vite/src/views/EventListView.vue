@@ -53,7 +53,6 @@ onMounted(() => {
   watchEffect(() => {
     loading.value = true
     error.value = null
-    events.value = null
     
     // Get the specific page data
     EventService.getEvents(pageSize.value, page.value)
@@ -83,6 +82,7 @@ onMounted(() => {
       @change="changePageSize($event)"
     >
       <option value="2">2 events</option>
+      <option value="3">3 events</option>
       <option value="4">4 events</option>
       <option value="6">6 events</option>
       <option value="10">10 events</option>
