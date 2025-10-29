@@ -94,7 +94,7 @@ onMounted(() => {
   <div v-else-if="error" class="error">{{ error }}</div>
   
   <!-- Events Display -->
-  <div v-else class="events">
+  <div v-else class="flex flex-col items-center">
     <div v-if="events && events.length === 0" class="no-events">
       No events found.
     </div>
@@ -202,13 +202,5 @@ onMounted(() => {
 
 #page-next {
   margin-left: auto;
-}
-</style>
-
-<style scoped>
-.events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 </style>
