@@ -74,12 +74,13 @@ onMounted(() => {
   <h1>Events For Good</h1>
   
   <!-- Page Size Selector -->
-  <div class="page-size-selector">
-    <label for="pageSize">Events per page: </label>
+  <div class="my-5 text-center">
+    <label for="pageSize" class="mr-2.5 font-bold text-gray-700">Events per page: </label>
     <select 
       id="pageSize" 
       :value="pageSize" 
       @change="changePageSize($event)"
+      class="py-1 px-2.5 border border-gray-300 rounded bg-white text-gray-700 text-sm"
     >
       <option value="2">2 events</option>
       <option value="3">3 events</option>
@@ -90,12 +91,12 @@ onMounted(() => {
   </div>
   
   <!-- Loading and Error States -->
-  <div v-if="loading" class="loading">Loading events...</div>
-  <div v-else-if="error" class="error">{{ error }}</div>
+  <div v-if="loading" class="text-center py-10 text-lg text-gray-600">Loading events...</div>
+  <div v-else-if="error" class="text-center py-10 text-base text-red-600 bg-red-50 border border-red-200 rounded mx-5">{{ error }}</div>
   
   <!-- Events Display -->
   <div v-else class="flex flex-col items-center">
-    <div v-if="events && events.length === 0" class="no-events">
+    <div v-if="events && events.length === 0" class="text-center py-10 text-base text-gray-600">
       No events found.
     </div>
     <template v-else-if="events">
@@ -105,12 +106,13 @@ onMounted(() => {
   </div>
   
   <!-- Pagination - Always show when not loading and no error -->
-  <div v-if="!loading && !error && totalEvents > 0" class="pagination">
+  <div v-if="!loading && !error && totalEvents > 0" class="flex justify-between items-center w-full max-w-sm mx-auto my-5 px-5">
     <RouterLink 
       id="page-prev"
       :to="{ name: 'event-list-view', query: { page: page - 1, pageSize: pageSize } }" 
       rel="prev" 
       v-if="page > 1"
+      class="inline-block py-2.5 px-5 no-underline text-gray-700 bg-gray-100 border border-gray-300 rounded transition-all duration-300 hover:bg-gray-200 hover:text-gray-800 mr-auto"
       >&#60; Prev Page</RouterLink
     >
 
@@ -119,88 +121,11 @@ onMounted(() => {
       :to="{ name: 'event-list-view', query: { page: page + 1, pageSize: pageSize } }" 
       rel="next" 
       v-if="hasNexPage"
+      class="inline-block py-2.5 px-5 no-underline text-gray-700 bg-gray-100 border border-gray-300 rounded transition-all duration-300 hover:bg-gray-200 hover:text-gray-800 ml-auto"
       >Next Page &#62;</RouterLink
     >
   </div>
 </template>
 
 <style>
-.page-size-selector {
-  margin: 20px 0;
-  text-align: center;
-}
-
-.page-size-selector label {
-  margin-right: 10px;
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-.page-size-selector select {
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: white;
-  color: #2c3e50;
-  font-size: 14px;
-}
-
-.loading {
-  text-align: center;
-  padding: 40px;
-  font-size: 18px;
-  color: #666;
-}
-
-.error {
-  text-align: center;
-  padding: 40px;
-  font-size: 16px;
-  color: #e74c3c;
-  background-color: #fdf2f2;
-  border: 1px solid #f5c6cb;
-  border-radius: 4px;
-  margin: 20px;
-}
-
-.no-events {
-  text-align: center;
-  padding: 40px;
-  font-size: 16px;
-  color: #666;
-}
-
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
-
-.pagination a {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #2c3e50;
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.pagination a:hover {
-  background-color: #e9ecef;
-  color: #495057;
-}
-
-#page-prev {
-  margin-right: auto;
-}
-
-#page-next {
-  margin-left: auto;
-}
 </style>
