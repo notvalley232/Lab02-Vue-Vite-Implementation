@@ -1,8 +1,9 @@
 import axios from 'axios'
+import type { Event } from '@/types'
 
 const apiClient = axios.create({
-  baseURL: 'https://my-json-server.typicode.com/notvalley232/Lab02-Vue-Vite-Implementation',
-  withCredentials: false,
+  baseURL: import.meta.env.VITE_BACKEND_URL,
+  withCredentials: true,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json'
@@ -16,5 +17,9 @@ export default {
   },
   getEvent(id: number) {
     return apiClient.get('/events/' + id)
+  },
+  saveEvent(event: Event) {
+    const { id: _omit, ...data } = event
+    return apiClient.post('/events', data)
   }
 }

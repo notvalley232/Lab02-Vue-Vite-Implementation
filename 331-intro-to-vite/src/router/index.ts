@@ -10,6 +10,8 @@ import NotFoundView from '@/views/NotFoundView.vue'
 import NetworkErrorView from '@/views/NetworkErrorView.vue'
 import nProgress from 'nprogress'
 import EventService from '@/services/EventService'
+import AddEventView from '@/views/event/EventFormView.vue'
+import OrganizationFormView from '@/views/OrganizationFormView.vue'
 import { useEventStore } from '@/stores/event'
 
 const router = createRouter({
@@ -73,6 +75,16 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutView,
+    },
+    {
+      path: '/add-event',
+      name: 'add-event',
+      component: AddEventView
+    },
+    {
+      path: '/add-organization',
+      name: 'add-organization',
+      component: OrganizationFormView
     },
     {
       path: '/students',
